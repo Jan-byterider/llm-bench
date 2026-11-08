@@ -2,6 +2,7 @@
 
 One benchmark for any OpenAI-compatible LLM server: vLLM, llama.cpp (`llama-server`), Strata, LM Studio, or
 anything else that speaks `/v1/chat/completions` with streaming. One Python file, standard library only.
+Made for the [Byterider experiments](https://byterider.be/en/experiments.html).
 
 Every engine reports its own speed in its own way, and vLLM reports none per request. `llm_bench.py` measures
 everything **from the client side, from the token stream, the same way for every engine**, so results from
@@ -61,6 +62,7 @@ including their `needles.json`.
 
 One NVIDIA RTX PRO 5000 72GB Blackwell, AMD Ryzen 7 9800X3D, 96 GB RAM, Samsung 9100 PRO NVMe, 8 November 2026.
 Write-up: [One GPU, three ways to serve a model](https://byterider.be/en/experiments-one-gpu-three-engines.html).
+More experiments like this: [byterider.be/en/experiments](https://byterider.be/en/experiments.html).
 
 | Folder | Setup |
 | --- | --- |
