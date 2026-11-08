@@ -1,0 +1,347 @@
+{
+ "schema": "llm-bench-1",
+ "server": {
+  "engine": "llama.cpp",
+  "engine_version": "b1-2a66703",
+  "model": "qwen3.8-27b",
+  "context": 65536,
+  "context_source": "/props n_ctx (per slot)",
+  "parallel_slots": 1
+ },
+ "machine": {
+  "python": "3.12.3",
+  "date": "2026-11-08T12:13:34",
+  "gpus": [
+   {
+    "name": "NVIDIA RTX PRO 5000 72GB Blackwell",
+    "vram_mib": "73415",
+    "used_mib_at_end": "68894",
+    "driver": "595.99.02",
+    "power_limit_w": "300.00"
+   }
+  ]
+ },
+ "dropped_fields": [],
+ "params": {
+  "url": "http://127.0.0.1:8001",
+  "runs": 1,
+  "think": false,
+  "label": "llama.cpp flash-next q8 split ncmoe25",
+  "notes": "unsloth Flash-Next Q8_0 on llama.cpp (LM Studio backend 2.60.0), -ngl 99 --n-cpu-moe 25: experts of 25 of 48 layers in RAM (CPU compute), the rest on GPU; mmap pages the overflow from NVMe; -np 1 -c 65536, KV q8_0, MTP draft; GPU memory used after load 68742 MiB; 89 GiB RAM; short run (1 run, chat/4K/agent)",
+  "command": "llm_bench.py --url http://127.0.0.1:8001 --runs 1 --only chat,4K,agent --label llama.cpp flash-next q8 split ncmoe25 --notes unsloth Flash-Next Q8_0 on llama.cpp (LM Studio backend 2.60.0), -ngl 99 --n-cpu-moe 25: experts of 25 of 48 layers in RAM (CPU compute), the rest on GPU; mmap pages the overflow from NVMe; -np 1 -c 65536, KV q8_0, MTP draft; GPU memory used after load 68742 MiB; 89 GiB RAM; short run (1 run, chat/4K/agent)"
+ },
+ "elapsed_s": 126.5186698436737,
+ "results": {
+  "chat": {
+   "requests": [
+    {
+     "ok": true,
+     "err": null,
+     "ttft_s": 1.562,
+     "total_s": 5.36,
+     "first_kind": "answer",
+     "prompt_tokens": 51,
+     "cached_tokens": 0,
+     "read_tokens": 51,
+     "generated_tokens": 100,
+     "generated_source": "usage",
+     "decode_tps": 26.1,
+     "prompt_tps": 32.6,
+     "engine_decode_tps": 26.065101672326392,
+     "engine_prompt_tps": 33.867150457804186,
+     "drafts_offered": 79,
+     "drafts_accepted": 72,
+     "run": 0,
+     "prompt": 0
+    },
+    {
+     "ok": true,
+     "err": null,
+     "ttft_s": 1.781,
+     "total_s": 6.301,
+     "first_kind": "answer",
+     "prompt_tokens": 43,
+     "cached_tokens": 0,
+     "read_tokens": 43,
+     "generated_tokens": 100,
+     "generated_source": "usage",
+     "decode_tps": 21.9,
+     "prompt_tps": 24.1,
+     "engine_decode_tps": 21.90358528503866,
+     "engine_prompt_tps": 24.84785025645293,
+     "drafts_offered": 108,
+     "drafts_accepted": 61,
+     "run": 0,
+     "prompt": 1
+    },
+    {
+     "ok": true,
+     "err": null,
+     "ttft_s": 1.69,
+     "total_s": 6.859,
+     "first_kind": "answer",
+     "prompt_tokens": 46,
+     "cached_tokens": 0,
+     "read_tokens": 46,
+     "generated_tokens": 100,
+     "generated_source": "usage",
+     "decode_tps": 19.2,
+     "prompt_tps": 27.2,
+     "engine_decode_tps": 19.152470301096177,
+     "engine_prompt_tps": 28.45261680572368,
+     "drafts_offered": 129,
+     "drafts_accepted": 56,
+     "run": 0,
+     "prompt": 2
+    }
+   ],
+   "decode_tps": {
+    "median": 21.9,
+    "min": 19.2,
+    "max": 26.1,
+    "n": 3
+   },
+   "engine_decode_tps": {
+    "median": 21.904,
+    "min": 19.152,
+    "max": 26.065,
+    "n": 3
+   },
+   "ttft_s": {
+    "median": 1.69,
+    "min": 1.562,
+    "max": 1.781,
+    "n": 3
+   },
+   "generated_tokens": {
+    "median": 100,
+    "min": 100,
+    "max": 100,
+    "n": 3
+   }
+  },
+  "prompts": {
+   "4K": {
+    "target_tokens": 4096,
+    "requests": [
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 7.915,
+      "total_s": 9.137,
+      "first_kind": "answer",
+      "prompt_tokens": 4019,
+      "cached_tokens": 0,
+      "read_tokens": 4019,
+      "generated_tokens": 24,
+      "generated_source": "usage",
+      "decode_tps": 18.8,
+      "prompt_tps": 507.8,
+      "engine_decode_tps": 18.817230692703166,
+      "engine_prompt_tps": 511.6733845813037,
+      "drafts_offered": 32,
+      "drafts_accepted": 12,
+      "run": 0
+     }
+    ],
+    "prompt_tps": {
+     "median": 507.8,
+     "min": 507.8,
+     "max": 507.8,
+     "n": 1
+    },
+    "engine_prompt_tps": {
+     "median": 511.673,
+     "min": 511.673,
+     "max": 511.673,
+     "n": 1
+    },
+    "ttft_s": {
+     "median": 7.915,
+     "min": 7.915,
+     "max": 7.915,
+     "n": 1
+    },
+    "prompt_tokens": {
+     "median": 4019,
+     "min": 4019,
+     "max": 4019,
+     "n": 1
+    },
+    "cached_tokens": {
+     "median": 0,
+     "min": 0,
+     "max": 0,
+     "n": 1
+    }
+   }
+  },
+  "agent": {
+   "sessions": [
+    [
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 6.595,
+      "total_s": 7.112,
+      "first_kind": "answer",
+      "prompt_tokens": 645,
+      "cached_tokens": 0,
+      "read_tokens": 645,
+      "generated_tokens": 11,
+      "generated_source": "usage",
+      "decode_tps": 24.0,
+      "prompt_tps": 97.8,
+      "engine_decode_tps": 19.32606158056262,
+      "engine_prompt_tps": 99.34161919446423,
+      "drafts_offered": 15,
+      "drafts_accepted": 5,
+      "run": 0,
+      "turn": 0
+     },
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 12.49,
+      "total_s": 15.002,
+      "first_kind": "answer",
+      "prompt_tokens": 3466,
+      "cached_tokens": 655,
+      "read_tokens": 2811,
+      "generated_tokens": 64,
+      "generated_source": "usage",
+      "decode_tps": 25.1,
+      "prompt_tps": 225.1,
+      "engine_decode_tps": 25.082144021670974,
+      "engine_prompt_tps": 225.1878407858679,
+      "drafts_offered": 68,
+      "drafts_accepted": 40,
+      "run": 0,
+      "turn": 1
+     },
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 12.474,
+      "total_s": 14.757,
+      "first_kind": "answer",
+      "prompt_tokens": 6487,
+      "cached_tokens": 3529,
+      "read_tokens": 2958,
+      "generated_tokens": 64,
+      "generated_source": "usage",
+      "decode_tps": 27.6,
+      "prompt_tps": 237.1,
+      "engine_decode_tps": 27.59981494981215,
+      "engine_prompt_tps": 237.36695052800903,
+      "drafts_offered": 62,
+      "drafts_accepted": 42,
+      "run": 0,
+      "turn": 2
+     },
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 11.149,
+      "total_s": 13.162,
+      "first_kind": "answer",
+      "prompt_tokens": 8988,
+      "cached_tokens": 6550,
+      "read_tokens": 2438,
+      "generated_tokens": 64,
+      "generated_source": "usage",
+      "decode_tps": 31.3,
+      "prompt_tps": 218.7,
+      "engine_decode_tps": 31.31539574210032,
+      "engine_prompt_tps": 218.95771457721312,
+      "drafts_offered": 58,
+      "drafts_accepted": 43,
+      "run": 0,
+      "turn": 3
+     },
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 13.94,
+      "total_s": 16.122,
+      "first_kind": "answer",
+      "prompt_tokens": 12194,
+      "cached_tokens": 9051,
+      "read_tokens": 3143,
+      "generated_tokens": 64,
+      "generated_source": "usage",
+      "decode_tps": 28.9,
+      "prompt_tps": 225.5,
+      "engine_decode_tps": 28.883448408659536,
+      "engine_prompt_tps": 225.72971097116778,
+      "drafts_offered": 57,
+      "drafts_accepted": 43,
+      "run": 0,
+      "turn": 4
+     },
+     {
+      "ok": true,
+      "err": null,
+      "ttft_s": 12.333,
+      "total_s": 14.39,
+      "first_kind": "answer",
+      "prompt_tokens": 15279,
+      "cached_tokens": 12257,
+      "read_tokens": 3022,
+      "generated_tokens": 59,
+      "generated_source": "usage",
+      "decode_tps": 29.9,
+      "prompt_tps": 245.0,
+      "engine_decode_tps": 28.21706120280575,
+      "engine_prompt_tps": 245.41276282797358,
+      "drafts_offered": 54,
+      "drafts_accepted": 40,
+      "run": 0,
+      "turn": 5
+     }
+    ]
+   ],
+   "cache_reported": true,
+   "hit_pct": {
+    "median": 69.035,
+    "min": 69.035,
+    "max": 69.035,
+    "n": 1
+   },
+   "turn_ttft_s": {
+    "median": 12.474,
+    "min": 11.149,
+    "max": 13.94,
+    "n": 5
+   },
+   "first_turn_ttft_s": {
+    "median": 6.595,
+    "min": 6.595,
+    "max": 6.595,
+    "n": 1
+   },
+   "last_turn_prompt_tokens": {
+    "median": 15279,
+    "min": 15279,
+    "max": 15279,
+    "n": 1
+   },
+   "last_turn_ttft_s": {
+    "median": 12.333,
+    "min": 12.333,
+    "max": 12.333,
+    "n": 1
+   },
+   "turn_decode_tps": {
+    "median": 28.9,
+    "min": 25.1,
+    "max": 31.3,
+    "n": 5
+   }
+  },
+  "clients": {},
+  "needle": {},
+  "skipped": {},
+  "failures": []
+ }
+}
